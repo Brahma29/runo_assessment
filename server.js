@@ -9,6 +9,7 @@ import cors from "cors";
 //Routes
 import userRoutes from "./routes/User.js";
 import driveRoutes from "./routes/drive.js";
+import slotRoutes from "./routes/Slot.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/users", userRoutes);
 app.use("/drives", driveRoutes);
+app.use("/slots", slotRoutes);
 
 app.use(errorHandler);
 
