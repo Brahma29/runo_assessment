@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    registeredSlot: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Slot'
+    }
   },
   { timestamps: true }
 );

@@ -18,7 +18,7 @@ const DriveSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    dosesAvailablePerSlot: {
+    slotCapacity: {
       type: Number,
       required: true,
     },

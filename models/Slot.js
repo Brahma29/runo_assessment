@@ -2,9 +2,13 @@ import mongoose from "mongoose";
 
 const SlotSchema = new mongoose.Schema(
   {
-    driveId: {
+    drive: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Drive",
+    },
+    date: {
+      type: Date,
+      required: true
     },
     time: {
       type: String,
@@ -14,11 +18,14 @@ const SlotSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    users: [
+    bookings: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
+        user: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        dose: { type: Number, required: true }
+      }
     ],
   },
   { timestamps: true }
