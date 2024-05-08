@@ -16,7 +16,7 @@ export const authHandler = (req, res, next) => {
         if (err) {
             return res.status(401).json({ message: "Invalid token" });
         }
-        req.user = decoded.user;
+        req.user = decoded.user._id;
         next();
     });
 };
